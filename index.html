@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- HEAD -->
+    <head>
+        <meta charset="UTF-8">
+        <title>Michael McCloskey</title>
+            <link rel="stylesheet" type="text/css" href="css/portfolio.css">
+            <script src="js/portfolio.js"></script>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    </head>
+
+
+<!-- BODY -->
+    <body class="background">
+    <!-- Fade In -->
+    <script>
+        document.body.className += 'fade-out';
+            $(function() {
+                $('body').removeClass('fade-out');
+            }
+        );
+    </script>
+        
+<!-- NAV -->
+    <div class="navbar">
+        <a class="active" href="#home">Home</a>
+        <a href="#slideshow">Slideshow</a>
+        <a href="#about">About</a>
+        <a href="#github">GitHub</a>
+        <a onclick="openForm()">Contact</a>
+    </div>
+    
+    <div class="btn cancel" onclick="closeForm()">
+        
+<!-- HOME -->
+    <div id="home">
+        <br>
+        <br>
+    <!-- Video -->
+            <video autoplay muted loop id="typing_video">
+            <source src="css/vid/Typing.mp4" type="video/mp4">
+            Your browser does not support HTML5 viedo
+        </video>
+    </div>
+
+    <!-- Video Text -->
+    <div class="video-text">
+            <h1 style="color:white;">Michael McCloskey's Portfolio</h1>
+                <p>
+                    <center>
+                        <q>The quality of your work, in the long run, is the deciding factor on how much your services are valued by the world.
+                        </q>
+                        <br>-Orison Swett Marden
+                        <br>
+                        <br>My name is Michael McCloskey. Welcome to my portfolio website. On it, I will tell you about my background and experience.
+                        <br>
+                        <br>Thank you for stopping by! 
+                    </center>
+                </p>
+    </div>
+
+
+<!-- SLIDESHOW-->
+    <div id="slideshow">
+        <div id="slideshow_background">
+            <div id="slideshow_container">
+
+                <div class="mySlides fade">
+                    <div class="slide_number">1 / 5</div>
+                    <img class="slideshow_images"src="css/img/My_Picture.png" style="width: 100%;" alt="">
+                    <div class="text">I'm available to assist you on your project</div>
+                </div>
+
+                <div class="mySlides fade">
+                    <div class="slide_number">2 / 5</div>
+                    <img class="slideshow_images"src="css/img/HTML_CSS_and_JavaScript.jpeg" style="width: 100%;" alt="">
+                    <div class="text">I am a full-stack software developer,<br> trained in:<br>HTML, CSS, JavaScript,</div>
+                </div>
+
+                <div class="mySlides fade">
+                    <div class="slide_number">3 / 5</div>
+                    <img class="slideshow_images"src="css/img/C_Sharp_and_Dot_NET.png" style="width: 100%;" alt="">
+                    <div class="text">C#, .NET Framework, ASP.NET, MVC,</div>
+                </div>
+
+                <div class="mySlides fade">
+                    <div class="slide_number">4 / 5</div>
+                    <img class="slideshow_images"src="css/img/SQL_and_Database.jpg" style="width: 100%;" alt="">
+                    <div class="text">Back End Development, Databases and SQL.</div>
+                </div>
+
+                <div class="mySlides fade">
+                    <div class="slide_number">5 / 5</div>
+                    <img class="slideshow_images"src="css/img/Coding_1.jpg" style="width: 100%;" alt="">
+                    <div class="text">
+                        <a onclick="openForm()" href="#contact" style="color: white;">Contact me now!</a>
+                    </div>
+                </div>
+
+                <a class="previous" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+            </div>
+
+            <br>
+
+            <div style="text-align:center">
+ 
+                <span class="dot" onclick="currentSlide(1)"></span> 
+                <span class="dot" onclick="currentSlide(2)"></span> 
+                <span class="dot" onclick="currentSlide(3)"></span> 
+                <span class="dot" onclick="currentSlide(4)"></span> 
+                <span class="dot" onclick="currentSlide(5)"></span> 
+               
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        var slideIndex = 1;
+        showSlides(slideIndex);
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+        function showSlides(n) {
+            var i;
+            var slides = document.getElementsByClassName('mySlides');
+            var dots = document.getElementsByClassName('dot');
+                if (n > slides.length) {slideIndex = 1}
+                if (n < 1) {slideIndex = slides.length}
+                    for (i = 0; i < slides.length; i++) {
+                        slides[i].style.display = "none";
+                    }
+                    for (i = 0; i < dots.length; i++) {
+                        dots[i].className = dots[i].className.replace(" active", "");
+                    }
+                slides[slideIndex-1].style.display = "block";
+                dots[slideIndex-1].className += " active";
+        }
+    </script>
+
+<!-- END SLIDESHOW -->
+
+
+<!-- ABOUT -->
+    <div class="row" id="about">
+
+        <!-- Left Column -->
+            <div class="column_2">
+            <img src="css/img/Development.jpg" alt="Laptop">
+            </div>
+
+            <!-- Right Column -->
+            <div class="column_1">
+                <h1>About Me</h1>
+                <p>In my past I have been a writer, a teacher, and a business owner. Now I am a computer programmer, who finds coding as challenging and exciting as anything I have done previously.
+				<br>
+                <br>I am a graduate of <a href="https://www.learncodinganywhere.com" target="_blank">The Tech Academy</a>’s Software Developer Boot Camp, and trained and experienced in the following web and programming languages: HTML, CSS, JavaScript, SQL, and C#.NET. If you would like to know more, take a look at my <a href="https://docs.google.com/document/d/e/2PACX-1vTCX4Z10ZLJjk7XxZWPIuQHnyMyBJCFDNgqlGJRbt81-rvpmCUm5Tn_mvJXIbgEh_dCE3HbidARpGS0/pub" target="_blank">Résumé</a> and my <a href="https://www.linkedin.com/in/michael-mccloskey-a88468161/" target="_blank">LinkedIn</a> page.
+				<br>
+                <br>I am a full-stack developer and would love to work with you on your project. <a href="#contact">Contact</a> me below!
+                </p>
+            </div>
+
+    </div>
+
+<!-- GITHUB SECTION -->
+    <div class="row" id="github">
+
+        <!-- Left Column -->
+        <div class="column_1">
+            <h1>GitHub</h1>
+                <p>You can view my coding projects on my GitHub profile here:
+                <br>
+                <center><a href="https://github.com/Mike-117" target="_blank">Michael McCloskey's GitHub</a></center></p>
+				<p>Check out my Prosper IT Consulting code summary, as well as my latest project, ExcelToSQLConsole, a program that imports an Excel file into an SQL Database. You can find it in the Excel_to_SQL repository.</p>
+        </div>
+
+        <!-- Right Column -->
+        <div class="column_2">
+            <a href="https://github.com/Mike-117" target="_blank"><img src="css/img/GitHub.png" alt="GitHub"></a>
+        </div>
+
+    </div>
+</div>
+
+
+<!-- CONTACT -->    
+    <div id="contact">
+        <button onclick="openForm()" class="pop_up_button"> CONTACT </button>
+
+            <div class="form-popup" id="myForm">
+                <form action="insert.php" method="POST" class="form-container">
+                
+                <h1>Contact</h1>
+                    <label for="name"><b>Name</b></label>
+                    <input type="text" placeholder="Please enter your name" name="name" required>
+                    <label for="phone"><b>Phone</b></label>
+                    <input type="text" placeholder="Please enter your phone number" name="phone" required>
+                    <label for="email"><b>Email</b></label>
+                    <input type="text" placeholder="Please enter your email address" name="email" required>
+                    <label for="message"><b>Message</b></label>
+                    <input type="text" placeholder="Please type your message here" name="message">
+
+                <button type="submit" class="btn">SUBMIT</button>
+                <button type="button" class="btn cancel" onclick="closeForm()">CLOSE</button>
+                </form>
+                            
+            </div>
+    </div>
+ 
+
+<!-- FOOTER -->
+    <footer>
+        <p>
+            <center>&copy; 2020, Michael McCloskey
+                
+            </center>
+        </p>
+    </footer>
+
+</body>
+</html>
